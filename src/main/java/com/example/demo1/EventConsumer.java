@@ -9,7 +9,7 @@ import java.util.List;
 
 @Slf4j
 @Component
-public class EventListener {
+public class EventConsumer {
 
     public final List<String> events = new ArrayList<>();
 

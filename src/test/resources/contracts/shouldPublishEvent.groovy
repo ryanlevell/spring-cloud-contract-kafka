@@ -4,14 +4,12 @@ import org.springframework.cloud.contract.spec.Contract
 
 Contract.make {
     description "Should publish event to Kafka topic"
-    label "publish" // (!) must match method name that actually publishes with arg Map<String, Object>
+    label "publishSampleEvent"
     input {
-        triggeredBy('publishSampleEvent()') // (!) must match method name that actually publishes
+        triggeredBy('publishSampleEvent()') // must match method in base class
     }
     outputMessage {
         sentTo("events")
-        body([
-                '123': 'test-event'
-        ])
+        body('Hello')
     }
 }
