@@ -7,6 +7,8 @@ This example consists of two parts:
 1. Provider that publishes events to Kafka and the Provider contract test.
 2. Consumer that listens for events from Kafka and the Consumer contract test.
 
+[Spring Cloud Contract Documentation](https://docs.spring.io/spring-cloud-contract/reference/index.html)
+
 ### Provider Side
 
 1. Add Maven dependency for Spring Cloud Contract.
@@ -31,6 +33,3 @@ This example consists of two parts:
     1. Define a consumer contract test that uses `@AutoConfigureStubRunner` to fetch the `stubs` jar from the local
        Maven repository.
     2. Run the consumer contract test to verify the consumer adheres to the contract.
-
-
-
