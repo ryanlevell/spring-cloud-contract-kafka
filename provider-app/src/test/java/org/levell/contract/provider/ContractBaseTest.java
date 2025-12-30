@@ -31,7 +31,8 @@ public abstract class ContractBaseTest {
     EventPublisher eventPublisher;
 
     // method in contract 'triggeredBy'
-    public void publishSampleEvent() {
+    public void publishSampleEvent() throws InterruptedException {
+        // use production publisher to verify end-to-end flow
         eventPublisher.publish("Hello");
     }
 

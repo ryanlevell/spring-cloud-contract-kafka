@@ -48,10 +48,12 @@ class ConsumerContractTest {
         // must match contract label
         stubTrigger.trigger("publishSampleEvent");
 
+        // use production consumer to verify end-to-end flow
         await().untilAsserted(() -> assertTrue(!eventConsumer.receivedEvents.isEmpty()));
         assertEquals("Hello", eventConsumer.receivedEvents.get(0));
     }
 
+    // additional code required when using plain Kafka instead of spring cloud stream
     @TestConfiguration
     static class MessagingConfig {
 

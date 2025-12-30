@@ -8,6 +8,7 @@ import org.testcontainers.kafka.KafkaContainer;
 @TestConfiguration
 public class KafkaTestConfig {
 
+    // defined as a bean to allow tests to share the same container instance - the recommended usage to reduce test execution time.
     @Bean
     @ServiceConnection // Spring Boot 3
     public KafkaContainer kafkaContainer() {

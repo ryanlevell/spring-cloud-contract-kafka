@@ -99,15 +99,6 @@
                 <configuration>
                     <baseClassForTests>org.levell.contract.provider.ContractBaseTest</baseClassForTests>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>convert</goal>
-                            <goal>generateStubs</goal>
-                            <goal>generateTests</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

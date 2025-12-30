@@ -1,7 +1,6 @@
 package org.levell.contract.provider;
 
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
@@ -15,8 +14,7 @@ public class EventPublisher {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    @SneakyThrows
-    public void publish(String event) {
+    public void publish(String event) throws InterruptedException {
         log.info("Publishing event: \"{}\"", event);
         Thread.sleep(2000); // wait for consumer to connect
         kafkaTemplate.send(TOPIC, event);

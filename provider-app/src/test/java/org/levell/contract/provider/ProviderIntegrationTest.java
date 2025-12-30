@@ -25,7 +25,7 @@ public class ProviderIntegrationTest {
     List<String> events = new ArrayList<>();
 
     @Test
-    void shouldPublishAndConsumeEvent() {
+    void shouldPublishEvent() throws InterruptedException {
         eventPublisher.publish("Hello!");
 
         await().untilAsserted(() -> assertTrue(!events.isEmpty()));

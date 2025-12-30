@@ -21,7 +21,8 @@ class ConsumerIntegrationTest {
     KafkaTemplate<String, String> kafkaTemplate;
 
     @Test
-    void shouldPublishAndConsumeEvent() {
+    void shouldPublishAndConsumeEvent() throws InterruptedException {
+        Thread.sleep(2000);
         kafkaTemplate.send("events", "Hello!");
 
         await().untilAsserted(() -> assertTrue(!eventConsumer.receivedEvents.isEmpty()));
